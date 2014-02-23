@@ -1,0 +1,407 @@
+{
+  "name": "lipsum",
+  "version": "0.0.1",
+  "description": "Lorem ipsum is a program used to test help output.\n\nIf it looks like latin then it does nothing, other more meaningful options that have an affect are interspersed, try --align and --format in particular. The examples are valid, they illustrate some of the program functionality.",
+  "copyright": "Copyright (C) 2014 Freeform Systems, Ltd.This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "errors": {
+    "EUNCAUGHT": {
+      "key": "EUNCAUGHT",
+      "message": "%s",
+      "code": 64,
+      "description": "Uncaught exception"
+    },
+    "ENOENT": {
+      "key": "ENOENT",
+      "message": "%s(1) does not exist, try --help",
+      "code": 65,
+      "description": "Executable does not exist"
+    },
+    "EPERM": {
+      "key": "EPERM",
+      "message": "%s(1) not executable, try chmod or run with root",
+      "code": 66,
+      "description": "Executable does not have the execute bit set"
+    },
+    "EUNKNOWN": {
+      "key": "EUNKNOWN",
+      "message": "unknown option: %s",
+      "code": 67,
+      "description": "Unknown option"
+    },
+    "EREQUIRED": {
+      "key": "EREQUIRED",
+      "message": "missing required option: %s",
+      "code": 68,
+      "description": "Required option is missing"
+    },
+    "EMULTIPLE": {
+      "key": "EMULTIPLE",
+      "message": "option %s may only be specified once, got: %s",
+      "code": 69,
+      "description": "Multiple values for an option not marked as multiple"
+    },
+    "ETYPE": {
+      "key": "ETYPE",
+      "message": "invalid type for %s, got: %s",
+      "code": 70,
+      "description": "Invalid option type encountered"
+    },
+    "ECONFLICT": {
+      "key": "ECONFLICT",
+      "message": "conflict detected on %s",
+      "code": 71,
+      "description": "Option property name conflict"
+    },
+    "EFILE_TYPE_F": {
+      "key": "EFILE_TYPE_F",
+      "message": "%s is not a file",
+      "code": 72,
+      "description": "File option is not a file"
+    },
+    "EFILE_TYPE_D": {
+      "key": "EFILE_TYPE_D",
+      "message": "%s is not a directory",
+      "code": 73,
+      "description": "File option is not a directory"
+    },
+    "EFILE_TYPE_E": {
+      "key": "EFILE_TYPE_E",
+      "message": "%s does not exist",
+      "code": 74,
+      "description": "File option does not exist"
+    },
+    "EFILE_TYPE_X": {
+      "key": "EFILE_TYPE_X",
+      "message": "%s is not executable",
+      "code": 75,
+      "description": "File option is not executable"
+    },
+    "EFILE_TYPE_R": {
+      "key": "EFILE_TYPE_R",
+      "message": "%s is not readable",
+      "code": 76,
+      "description": "File option is not readable"
+    },
+    "EFILE_TYPE_W": {
+      "key": "EFILE_TYPE_W",
+      "message": "%s is not writable",
+      "code": 77,
+      "description": "File option is not writable"
+    },
+    "EFILE_TYPE_L": {
+      "key": "EFILE_TYPE_L",
+      "message": "%s is not a symbolic link",
+      "code": 78,
+      "description": "File option is not a symbolic link"
+    },
+    "EFILE_TYPE_S": {
+      "key": "EFILE_TYPE_S",
+      "message": "%s is not a socket",
+      "code": 79,
+      "description": "File option is not a socket"
+    },
+    "EFILE_TYPE_T": {
+      "key": "EFILE_TYPE_T",
+      "message": "%s is not a tty",
+      "code": 80,
+      "description": "File option is not a tty"
+    },
+    "EFILE_TYPE_B": {
+      "key": "EFILE_TYPE_B",
+      "message": "%s is not a block special file",
+      "code": 81,
+      "description": "File option is not a block special file"
+    },
+    "EFILE_TYPE_C": {
+      "key": "EFILE_TYPE_C",
+      "message": "%s is not a character special file",
+      "code": 82,
+      "description": "File option is not a character special file"
+    },
+    "EFILE_TYPE_P": {
+      "key": "EFILE_TYPE_P",
+      "message": "%s is not a named pipe (fifo)",
+      "code": 83,
+      "description": "File option is not a named pipe (fifo)"
+    },
+    "EFILE_TYPE_N": {
+      "key": "EFILE_TYPE_N",
+      "message": "%s is the empty string",
+      "code": 84,
+      "description": "Option is the empty string"
+    },
+    "EFILE_TYPE_Z": {
+      "key": "EFILE_TYPE_Z",
+      "message": "%s is not the empty string",
+      "code": 85,
+      "description": "Option is not the empty string"
+    },
+    "EFILE_TYPE_SIZE": {
+      "key": "EFILE_TYPE_SIZE",
+      "message": "%s is an empty file",
+      "code": 86,
+      "description": "File option is an empty file"
+    },
+    "ERC_SYNTAX": {
+      "key": "ERC_SYNTAX",
+      "message": "syntax error in rc file %s",
+      "code": 87,
+      "description": "Syntax error in rc file"
+    },
+    "ERC_LOAD": {
+      "key": "ERC_LOAD",
+      "message": "error loading rc file %s",
+      "code": 88,
+      "description": "Error loading rc file"
+    },
+    "EUNKNOWN_LOG_LEVEL": {
+      "key": "EUNKNOWN_LOG_LEVEL",
+      "message": "unknown log level %s",
+      "code": 89,
+      "description": "Unknown log level"
+    },
+    "ELOG_FILE": {
+      "key": "ELOG_FILE",
+      "message": "unable to open log file %s",
+      "code": 90,
+      "description": "Unable to open log file"
+    }
+  },
+  "sections": {
+    "examples": [
+      {
+        "name": "lipsum -j",
+        "description": "Print help as JSON"
+      },
+      {
+        "name": "lipsum -f=markdown",
+        "description": "Print help as markdown"
+      },
+      {
+        "name": "lipsum --align flex",
+        "description": "Switch to flex alignment"
+      },
+      {
+        "name": "lipsum --maximum=100",
+        "description": "Increase maximum column width"
+      },
+      {
+        "name": "lipsum --sort null",
+        "description": "Disable help option sort (natural order)"
+      },
+      {
+        "name": "lipsum --sort false",
+        "description": "Use default sort order"
+      },
+      {
+        "name": "lipsum --sort true",
+        "description": "Use lexicographic sort order"
+      },
+      {
+        "name": "lipsum --sort 1",
+        "description": "Sort by length of option (longest first)"
+      },
+      {
+        "name": "lipsum --sort -1",
+        "description": "Sort by length of option (shortest first)"
+      },
+      {
+        "name": "lipsum --no-color",
+        "description": "Disable ansi colors"
+      }
+    ]
+  },
+  "author": "muji <noop@xpm.io>",
+  "bugs": {
+    "url": "https://github.com/freeformsystems/cli-lipsum/issues",
+    "email": "muji <noop@xpm.io>"
+  },
+  "keywords": [
+    "cli",
+    "example",
+    "program",
+    "lipsum",
+    "command"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/freeformsystems/cli-lipsum/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeformsystems/cli-lipsum"
+  },
+  "commands": {
+    "lorem": {
+      "name": "lorem",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "names": [
+        "lorem"
+      ]
+    },
+    "mauris": {
+      "name": "mauris",
+      "description": "Mauris pulvinar aliquam adipiscing.",
+      "names": [
+        "mauris"
+      ]
+    },
+    "in": {
+      "name": "in",
+      "description": "In vitae faucibus libero.",
+      "names": [
+        "in"
+      ]
+    },
+    "ut": {
+      "name": "ut",
+      "description": "Ut bibendum massa orci, a vestibulum est fermentum quis.",
+      "names": [
+        "ut"
+      ]
+    },
+    "phasellus": {
+      "name": "phasellus",
+      "description": "Phasellus facilisis eros vel dui lobortis, at posuere neque placerat.",
+      "names": [
+        "phasellus"
+      ]
+    }
+  },
+  "options": {
+    "color": {
+      "name": "--color",
+      "description": "control terminal color",
+      "names": [
+        "--color"
+      ]
+    },
+    "debug": {
+      "name": "--debug",
+      "description": "enable debugging",
+      "names": [
+        "--debug"
+      ]
+    },
+    "json": {
+      "name": "-j, --json",
+      "description": "Print help as json",
+      "names": [
+        "-j",
+        "--json"
+      ]
+    },
+    "collapse": {
+      "name": "-c, --collapse",
+      "description": "Collapse whitespace between sections",
+      "names": [
+        "-c",
+        "--collapse"
+      ]
+    },
+    "vanilla": {
+      "name": "-v, --vanilla",
+      "description": "Disable parameter replacement",
+      "names": [
+        "-v",
+        "--vanilla"
+      ]
+    },
+    "exit": {
+      "name": "-e, --exit",
+      "description": "Include exit section from error definitions",
+      "names": [
+        "-e",
+        "--exit"
+      ]
+    },
+    "sort": {
+      "name": "-s, --sort [value]",
+      "description": "Alters the help option sort order. Set to null to use natural order which is likely the order that options were declared in however this is not guaranteed. Use false for the default sorting logic which favours options with more names, use true to sort lexicographically (Array.prototype.sort). Use 1 to sort by option string length (determined by the length of the help option string), reverse the order with -1.",
+      "names": [
+        "-s",
+        "--sort"
+      ],
+      "extra": "[value]"
+    },
+    "format": {
+      "name": "-f, --format [value]",
+      "description": "Set the help output format",
+      "names": [
+        "-f",
+        "--format"
+      ],
+      "extra": "[value]"
+    },
+    "align": {
+      "name": "-a, --align [value]",
+      "description": "Alignment style (column|line|flex|wrap)",
+      "names": [
+        "-a",
+        "--align"
+      ],
+      "extra": "[value]"
+    },
+    "maximum": {
+      "name": "-m, --maximum [value]",
+      "description": "Maximum column width, default 80",
+      "names": [
+        "-m",
+        "--maximum"
+      ],
+      "extra": "[value]"
+    },
+    "loremIpsumDolor": {
+      "name": "-L, --lorem-ipsum-dolor[=VALUE]",
+      "description": "Lorem ipsum dolor",
+      "names": [
+        "-L",
+        "--lorem-ipsum-dolor"
+      ],
+      "extra": "[=VALUE]"
+    },
+    "ipsum": {
+      "name": "-i, --ipsum [VALUE]",
+      "description": "Ipsum dolor sit amet",
+      "names": [
+        "-i",
+        "--ipsum"
+      ],
+      "extra": "[VALUE]"
+    },
+    "maurisPulvinar": {
+      "name": "--mauris-pulvinar, --ut-bibendum=[VALUE]",
+      "description": "Mauris pulvinar",
+      "names": [
+        "--mauris-pulvinar",
+        "--ut-bibendum"
+      ],
+      "extra": "=[VALUE]"
+    },
+    "aliquam": {
+      "name": "-a, --aliquam [VALUE]",
+      "description": "In vitae faucibus libero. Nullam eget leo eget tortor tempor luctus. Nam at ante felis. Fusce pellentesque aliquet nisl, at tempus ante imperdiet elementum. Etiam a bibendum justo, ut placerat massa. Mauris mattis tellus ligula, at luctus ante iaculis quis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras eget dui nisl.",
+      "names": [
+        "-a",
+        "--aliquam"
+      ],
+      "extra": "[VALUE]"
+    },
+    "helpopt": {
+      "name": "--help",
+      "description": "display this help and exit",
+      "names": [
+        "--help"
+      ]
+    },
+    "versionopt": {
+      "name": "--version",
+      "description": "output version information and exit",
+      "names": [
+        "--version"
+      ]
+    }
+  }
+}
