@@ -1,0 +1,41 @@
+{
+  "name": "cli-lipsum",
+  "version": "0.0.1",
+  "description": "Canonical example for the command module",
+  "author": "muji <noop@xpm.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeformsystems/cli-lipsum"
+  },
+  "bugs": {
+    "url": "https://github.com/freeformsystems/cli-lipsum/issues",
+    "email": "muji <noop@xpm.io>"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/freeformsystems/cli-lipsum/blob/master/LICENSE"
+  }],
+  "keywords": [
+    "cli",
+    "example",
+    "program",
+    "lipsum",
+    "command"
+  ],
+  "dependencies": {
+    "cli-interface": "~1.0.5",
+    "cli-native": "~1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.0",
+    "chai": "~1.9.0",
+    "istanbul": "~0.2.4"
+  },
+  "engine": [ "node >= 0.10.21" ],
+  "scripts": {
+    "help2man": "help2man=true help2man --no-info --output=./doc/lipsum-help2man.1 ./bin/lipsum && man ./doc/lipsum-help2man.1",
+    "help2json": "./bin/help/lipsum -j",
+    "test": "istanbul cover _mocha -- -u bdd --recursive --bail --reporter list -A test/unit/"
+  },
+  "config" : {}
+}
