@@ -1,6 +1,6 @@
 {
   "name": "cli-lipsum",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Canonical example for the command module",
   "author": "muji <noop@xpm.io>",
   "repository": {
@@ -32,6 +32,9 @@
     "mocha": "~1.17.0",
     "chai": "~1.9.0",
     "istanbul": "~0.2.4"
+  },
+  "directories": {
+    "bin": "./bin"
   },
   "engine": [ "node >= 0.10.21" ],
   "scripts": {
