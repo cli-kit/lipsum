@@ -1,6 +1,6 @@
 {
   "name": "cli-lipsum",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Canonical example for the command module",
   "author": "muji <noop@xpm.io>",
   "repository": {
