@@ -2,6 +2,14 @@
 
 Canonical example for the [command][command] module.
 
+## Install
+
+```
+npm i -g cli-lipsum
+```
+
+## Usage
+
 ```
 Lorem ipsum is a program used to test help output.
 
