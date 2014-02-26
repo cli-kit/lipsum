@@ -28,8 +28,8 @@ nothing, other more meaningful options that have an affect are interspersed, try
 --align and --format in particular. The examples are valid, they illustrate some
 of the functionality of the command module.
 
-When invoked without the -h | --help option the program will print some lorem
-ipsum paragraphs.
+When invoked without no arguments the program will print some lorem ipsum
+paragraphs.
 
 Usage: lipsum [-jcve] [--json] [--collapse] [--vanilla]
               [--sort=null|false|true|1|-1]
@@ -37,13 +37,25 @@ Usage: lipsum [-jcve] [--json] [--collapse] [--vanilla]
               [--align=column|line|flex|wrap] [--maximum=INT]
 
 Options:
- -e, --exit         Include exit section from error definitions.
+
+Command should be one of: print, ex.
+
+Commands:
+ print              Print some messages using the log middleware.
+ ex, exception, e   Throw an exception.
+
+Arguments:
+ -v, --vanilla      Disable parameter replacement.
      --[no]-color   Enable or disable terminal colors.
+     --log-file=[file]
+                    Redirect to log file.
+     --debug        Enable debugging.
  -l, --latin        Include mock lipsum options and commands.
  -j, --json         Print help as json.
  -c, --collapse     Collapse whitespace between sections.
- -v, --vanilla      Disable parameter replacement.
-     --debug        Enable debugging.
+     --log-level=[level]
+                    Set the log level.
+ -e, --exit         Include exit section from error definitions.
  -s, --sort=[value] Alters the help option sort order. Set to null to use
                     natural order which is likely the order that options were
                     declared in however this is not guaranteed. Use false for
@@ -86,6 +98,14 @@ Examples:
                     Disable terminal colors.
  lipsum --help > help.txt && cat help.txt
                     Verify ANSI escape sequences are not written to files.
+ lipsum print       Print some messages, illustrates the log middleware.
+ lipsum print --log-level=warn --no-color
+                    Set log level to warn.
+ lipsum ex          Print an error, will be treated as an uncaught exception.
+ lipsum ex --debug  Include stack trace in exception and set log level to trace.
+ lipsum ex; echo $?;
+                    Verify exit code for uncaught exception, compare to lipsum
+                    -eh.
 
 Report bugs to muji <noop@xpm.io>.
 ```
