@@ -81,7 +81,7 @@ Examples:
  lipsum --help      Print help using the command module defaults.
  lipsum -lh         Print help and include mock latin options and commands.
  lipsum -jh         Print help as JSON.
- lipsum -eh         Include exit codes in the help ouput.
+ lipsum -eh         Include exit codes in the help output.
  lipsum --format markdown --help
                     Print help as markdown.
  lipsum -h --align flex
@@ -104,12 +104,12 @@ Examples:
                     Verify ANSI escape sequences are not written to files.
  lipsum print       Print some messages, illustrates the log middleware.
  lipsum print --log-level=warn --no-color
-                    Set log level to warn.
+                    Set log level to warn and print some messages.
  lipsum ex          Print an error, will be treated as an uncaught exception.
  lipsum ex --debug  Include stack trace in exception and set log level to trace.
  lipsum ex; echo $?;
-                    Verify exit code for uncaught exception, compare to lipsum
-                    -eh.
+                    Verify exit code for uncaught exception, compare to `lipsum
+                    -eh`.
 
 Report bugs to muji <noop@xpm.io>.
 ```
