@@ -9,7 +9,7 @@ Table of Contents
 lipsum(1)
 =========
 
-Canonical example for the command module.
+Canonical example for the [command](https://github.com/freeformsystems/cli-command) module.
 
 ## Install
 

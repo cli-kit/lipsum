@@ -57,9 +57,6 @@
     "base": "https://github.com/freeformsystems/cli-lipsum",
     "partial": [
       {
-        "ref": "description"
-      },
-      {
         "inc": [
           "introduction.md",
           "install.md"
