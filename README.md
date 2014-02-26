@@ -31,14 +31,14 @@ of the functionality of the command module.
 When invoked without no arguments the program will print some lorem ipsum
 paragraphs.
 
-Usage: lipsum [-ljcveh] [--color|--no-color] [--debug]
-              [-l|--latin] [-j|--json] [-c|--collapse]
+Usage: lipsum <command> [-ljcveh] [--color|--no-color]
+              [--debug] [-l|--latin] [-j|--json] [-c|--collapse]
               [-v|--vanilla] [-e|--exit] [-h|--help] [--version]
               [--log-level=<level>] [--log-file=<file>]
               [-s|--sort=(null|true|false|1|-1)]
               [-f|--format=(text|json|markdown)]
               [-a|--align=(column|line|flex|wrap)]
-              [-m|--maximum=<value>]
+              [-m|--maximum=<60-240>] <args>
 
 Options:
 
