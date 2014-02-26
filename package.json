@@ -1,6 +1,6 @@
 {
   "name": "lipsum",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Canonical example for the command module",
   "author": "muji <noop@xpm.io>",
   "repository": {
@@ -11,10 +11,12 @@
     "url": "https://github.com/freeformsystems/cli-lipsum/issues",
     "email": "muji <noop@xpm.io>"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/freeformsystems/cli-lipsum/blob/master/LICENSE"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/freeformsystems/cli-lipsum/blob/master/LICENSE"
+    }
+  ],
   "keywords": [
     "cli",
     "example",
@@ -37,7 +39,9 @@
   "directories": {
     "bin": "./bin"
   },
-  "engine": [ "node >= 0.10.21" ],
+  "engine": [
+    "node >= 0.10.21"
+  ],
   "scripts": {
     "readme": "mdp --force -v",
     "help2man": "help2man=true help2man --no-info --output=./doc/lipsum-help2man.1 ./bin/lipsum && man ./doc/lipsum-help2man.1",
