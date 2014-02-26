@@ -1,6 +1,6 @@
 {
   "name": "cli-lipsum",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Canonical example for the command module",
   "author": "muji <noop@xpm.io>",
   "repository": {
@@ -23,9 +23,9 @@
     "command"
   ],
   "dependencies": {
-    "ttycolor": "~0.8.4",
+    "ttycolor": "~0.8.6",
     "cli-interface": "~1.0.5",
-    "cli-command": "~0.8.10",
+    "cli-command": "~0.8.15",
     "cli-native": "~1.0.0"
   },
   "devDependencies": {
