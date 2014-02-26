@@ -20,11 +20,16 @@ npm i -g cli-lipsum
 ## Usage
 
 ```
-Lorem ipsum is a program used to test help output.
+Lipsum is a program used to generate lorem ipsum text and to test help output
+for the command module.
 
-If it looks like latin then it does nothing, other more meaningful options that
-have an affect are interspersed, try --align and --format in particular. The
-examples are valid, they illustrate some of the program functionality.
+If the -l | --latin option is specified and it looks like latin then it does
+nothing, other more meaningful options that have an affect are interspersed, try
+--align and --format in particular. The examples are valid, they illustrate some
+of the functionality of the command module.
+
+When invoked without the -h | --help option the program will print some lorem
+ipsum paragraphs.
 
 Usage: lipsum [-jcve] [--json] [--collapse] [--vanilla]
               [--sort=null|false|true|1|-1]
@@ -32,25 +37,13 @@ Usage: lipsum [-jcve] [--json] [--collapse] [--vanilla]
               [--align=column|line|flex|wrap] [--maximum=INT]
 
 Options:
-
-Command should be one of: lorem, mauris, in, ut, phasellus.
-
-Commands:
- lorem              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- mauris             Mauris pulvinar aliquam adipiscing.
- in                 In vitae faucibus libero.
- ut                 Ut bibendum massa orci, a vestibulum est fermentum quis.
- phasellus          Phasellus facilisis eros vel dui lobortis, at posuere neque
-                    placerat.
-
-Arguments:
- -a, --align=[value]
-                    Alignment style (column|line|flex|wrap).
-     --color        Control terminal color.
+ -e, --exit         Include exit section from error definitions.
+     --[no]-color   Enable or disable terminal colors.
+ -l, --latin        Include mock lipsum options and commands.
  -j, --json         Print help as json.
  -c, --collapse     Collapse whitespace between sections.
  -v, --vanilla      Disable parameter replacement.
- -e, --exit         Include exit section from error definitions.
+     --debug        Enable debugging.
  -s, --sort=[value] Alters the help option sort order. Set to null to use
                     natural order which is likely the order that options were
                     declared in however this is not guaranteed. Use false for
@@ -61,40 +54,37 @@ Arguments:
                     reverse the order with -1.
  -f, --format=[value]
                     Set the help output format.
-     --debug        Enable debugging.
+ -a, --align=[value]
+                    Alignment style (column|line|flex|wrap).
  -m, --maximum=[value]
                     Maximum column width, default 80.
- -L, --lorem-ipsum-dolor=[VALUE]
-                    Lorem ipsum dolor.
- -i, --ipsum=[VALUE]
-                    Ipsum dolor sit amet.
- --mauris-pulvinar, --ut-bibendum=[VALUE]
-                    Mauris pulvinar.
- -a, --aliquam=[VALUE]
-                    In vitae faucibus libero. Nullam eget leo eget tortor tempor
-                    luctus. Nam at ante felis. Fusce pellentesque aliquet nisl,
-                    at tempus ante imperdiet elementum. Etiam a bibendum justo,
-                    ut placerat massa. Mauris mattis tellus ligula, at luctus
-                    ante iaculis quis. Cum sociis natoque penatibus et magnis
-                    dis parturient montes, nascetur ridiculus mus. Cras eget dui
-                    nisl.
-     --help         Display this help and exit.
+ -h, --help         Display this help and exit.
      --version      Output version information and exit.
 
 Examples:
- lipsum -j          Print help as JSON.
- lipsum -f=markdown Print help as markdown.
- lipsum --align flex
+ lipsum --help      Print help using the command module defaults.
+ lipsum -lh         Print help and include mock latin options and commands.
+ lipsum -jh         Print help as JSON.
+ lipsum --format markdown --help
+                    Print help as markdown.
+ lipsum -h --align flex
                     Switch to flex alignment.
- lipsum --maximum=100
+ lipsum -lh --maximum 100
                     Increase maximum column width.
- lipsum --sort null Disable help option sort (natural order).
- lipsum --sort false
+ lipsum -lh --sort null
+                    Disable help option sort (natural order).
+ lipsum -lh --sort false
                     Use default sort order.
- lipsum --sort true Use lexicographic sort order.
- lipsum --sort 1    Sort by length of option (longest first).
- lipsum --sort -1   Sort by length of option (shortest first).
- lipsum --no-color  Disable ansi colors.
+ lipsum -lh --sort true
+                    Use lexicographic sort order.
+ lipsum -lh --sort 1
+                    Sort by length of option (longest first).
+ lipsum -lh --sort -1
+                    Sort by length of option (shortest first).
+ lipsum --help --no-color
+                    Disable terminal colors.
+ lipsum --help > help.txt && cat help.txt
+                    Verify ANSI escape sequences are not written to files.
 
 Report bugs to muji <noop@xpm.io>.
 ```
