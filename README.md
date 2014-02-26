@@ -31,10 +31,9 @@ of the functionality of the command module.
 When invoked without no arguments the program will print some lorem ipsum
 paragraphs.
 
-Usage: lipsum [-jcve] [--json] [--collapse] [--vanilla]
-              [--sort=null|false|true|1|-1]
-              [--format=text|json|markdown]
-              [--align=column|line|flex|wrap] [--maximum=INT]
+Usage: lipsum [--[no]-color] [--debug] [-l|--latin] [-j|--json]
+              [-c|--collapse] [-v|--vanilla] [-e|--exit]
+              [-h|--help] [--version]
 
 Options:
 
