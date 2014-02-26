@@ -65,6 +65,7 @@ Examples:
  lipsum --help      Print help using the command module defaults.
  lipsum -lh         Print help and include mock latin options and commands.
  lipsum -jh         Print help as JSON.
+ lipsum -eh         Include exit codes in the help ouput.
  lipsum --format markdown --help
                     Print help as markdown.
  lipsum -h --align flex
