@@ -1,13 +1,13 @@
 Table of Contents
 =================
 
-* [cli-lipsum(1)](#cli-lipsum1)
+* [lipsum(1)](#lipsum1)
   * [Install](#install)
   * [Usage](#usage)
   * [License](#license)
 
-cli-lipsum(1)
-=============
+lipsum(1)
+=========
 
 Canonical example for the command module.
 
