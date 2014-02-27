@@ -271,11 +271,14 @@ Report bugs to muji <noop@xpm.io>.
 ## Version
 
 Notice that the copyright information configured in the [definition](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md) is used in the program version:
-lipsum 0.1.7.
+
+```
+lipsum 0.1.7
 
 Copyright (C) 2014 Freeform Systems, Ltd.
 This is free software; see the source for copying conditions. There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
 
 ## License
 

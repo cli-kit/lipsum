@@ -84,7 +84,8 @@
       {
         "title": "Version",
         "text": "Notice that the copyright information configured in the [definition](/lib/lipsum.md) is used in the program version:",
-        "bin": "lipsum --version"
+        "bin": "lipsum --version",
+        "type": "code"
       },
       {
         "inc": [
