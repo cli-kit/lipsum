@@ -64,12 +64,9 @@
       {
         "inc": [
           "introduction.md",
-          "install.md"
+          "install.md",
+          "definition.md"
         ]
-      },
-      {
-        "title": "Definition",
-        "text": "This program was configured using this [markdown definition file](/lib/lipsum.md), see [lipsum.md](https://raw.github.com/freeformsystems/lipsum/master/lib/lipsum.md) for the raw version."
       },
       {
         "title": "Source",

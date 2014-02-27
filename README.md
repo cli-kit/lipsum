@@ -3,6 +3,7 @@ Table of Contents
 
 * [lipsum(1)](#lipsum1)
   * [Install](#install)
+  * [Definition](#definition)
   * [Source](#source)
   * [Usage](#usage)
   * [License](#license)
@@ -17,6 +18,10 @@ Canonical example for the [command](https://github.com/freeformsystems/cli-comma
 ```
 npm i -g cli-lipsum
 ```
+
+## Definition
+
+The `lipsum` program was configured using this [markdown definition file](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md), see [lipsum.md](https://raw.github.com/freeformsystems/lipsum/master/lib/lipsum.md) for the raw version, check out [usage](#usage) to see the resulting help output from combining the definition with the [source](#source).
 
 ## Source
 
