@@ -182,7 +182,7 @@ nothing, other more meaningful options that have an affect are interspersed, try
 --align and --format in particular. The examples are valid, they illustrate some
 of the functionality of the command module.
 
-When invoked without no arguments the program will print some lorem ipsum
+When invoked without arguments the program will print some lorem ipsum
 paragraphs.
 
 Usage: lipsum <command> [-ljcveh] [--color|--no-color]
