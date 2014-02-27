@@ -76,8 +76,7 @@
         "title": "Definition",
         "text": "This program was configured using the following markdown configuration, see [lipsum.md](/lib/lipsum.md):",
         "inc": "../../lib/lipsum.md",
-        "type": "code",
-        "language": "markdown"
+        "format": "<pre><code>%s</code></pre>"
       },
       {
         "inc": [
