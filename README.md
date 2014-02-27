@@ -73,7 +73,7 @@ Arguments:
  -a, --align=[value]
                     Alignment style (column|line|flex|wrap).
  -m, --maximum=[value]
-                    Maximum column width, default 80.
+                    Maximum column width.
  -h, --help         Display this help and exit.
      --version      Output version information and exit.
 
