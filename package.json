@@ -25,9 +25,9 @@
     "command"
   ],
   "dependencies": {
-    "cli-command": "~0.8.30",
+    "cli-command": "~0.8.32",
     "cli-logger": "~0.5.10",
-    "cli-interface": "~1.0.7",
+    "cli-interface": "~1.0.8",
     "cli-native": "~1.0.0",
     "ttycolor": "~0.8.8"
   },

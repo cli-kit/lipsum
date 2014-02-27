@@ -8,3 +8,8 @@ If the -l | --latin option is specified and it looks like latin then it does not
 When invoked without no arguments the program will print some lorem ipsum paragraphs.
 
 ## Options
+
+## Copyright
+
+Copyright (C) 2014 Freeform Systems, Ltd.
+This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
