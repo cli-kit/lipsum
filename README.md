@@ -6,6 +6,7 @@ Table of Contents
   * [Definition](#definition)
   * [Source](#source)
   * [Usage](#usage)
+  * [Version](#version)
   * [License](#license)
 
 lipsum(1)
@@ -170,7 +171,7 @@ module.exports = function(pkg) {
 
 ## Usage
 
-This is the help output which is the result of combining the markdown [definition](#definition) with the [source code](#source).
+This is the help output which is the result of combining the markdown [definition](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md) with the [source code](#source).
 
 ```
 Lipsum is a program used to generate lorem ipsum text and to test help output
@@ -266,6 +267,15 @@ Examples:
 
 Report bugs to muji <noop@xpm.io>.
 ```
+
+## Version
+
+Notice that the copyright information configured in the [definition](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md) is used in the program version:
+lipsum 0.1.7.
+
+Copyright (C) 2014 Freeform Systems, Ltd.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ## License
 

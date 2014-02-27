@@ -77,9 +77,14 @@
       },
       {
         "title": "Usage",
-        "text": "This is the help output which is the result of combining the markdown [definition](#definition) with the [source code](#source).",
+        "text": "This is the help output which is the result of combining the markdown [definition](/lib/lipsum.md) with the [source code](#source).",
         "bin": "lipsum --help",
         "type": "code"
+      },
+      {
+        "title": "Version",
+        "text": "Notice that the copyright information configured in the [definition](/lib/lipsum.md) is used in the program version:",
+        "bin": "lipsum --version"
       },
       {
         "inc": [
