@@ -110,10 +110,10 @@ Report bugs to muji <noop@xpm.io>.
 
 ## Definition
 
-This program was configured using the following markdown definition file, see [lipsum.md](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md):
+This program was configured using the following markdown definition file, see [lipsum.md](https://raw.github.com/freeformsystems/lipsum/master/lib/lipsum.md):
 
-<pre><code>lipsum
-=================
+lipsum
+======
 
 Lipsum is a program used to generate lorem ipsum text and to test help output for the command module.
 
@@ -257,7 +257,7 @@ lipsum ex; echo $?;
 ## Copyright
 
 Copyright (C) 2014 Freeform Systems, Ltd.
-This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</code></pre>
+This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ## Source
 

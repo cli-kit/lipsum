@@ -74,9 +74,8 @@
       },
       {
         "title": "Definition",
-        "text": "This program was configured using the following markdown definition file, see [lipsum.md](/lib/lipsum.md):",
-        "inc": "../../lib/lipsum.md",
-        "format": "<pre><code>%s</code></pre>"
+        "text": "This program was configured using the following markdown definition file, see [lipsum.md](https://raw.github.com/freeformsystems/lipsum/master/lib/lipsum.md):",
+        "inc": "../../lib/lipsum.md"
       },
       {
         "title": "Source",
