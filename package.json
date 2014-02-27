@@ -58,6 +58,7 @@
     "include": "doc/readme",
     "require": "lib",
     "links": "links.md",
+    "toc": "Table of Contents",
     "base": "https://github.com/freeformsystems/cli-lipsum",
     "partial": [
       {

@@ -1,3 +1,18 @@
+Table of Contents
+=================
+
+* [lipsum(1)](#lipsum1)
+  * [Install](#install)
+  * [Usage](#usage)
+  * [Definition](#definition)
+* [lipsum](#lipsum)
+  * [Commands](#commands)
+  * [Options](#options)
+  * [Examples](#examples)
+  * [Copyright](#copyright)
+  * [Source](#source)
+  * [License](#license)
+
 lipsum(1)
 =========
 
