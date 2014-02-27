@@ -1,13 +1,4 @@
 #!/usr/bin/env node
 
-/**
- *  Canonical example program for the command module.
- *
- *  Run with no arguments and read the help for options
- *  and examples.
- *
- *  ./bin/help/lipsum
- */
-var interface = require('../lib/lipsum');
-var program = interface(require('../package.json'));
-program.parse();
+var program = require('../lib/lipsum');
+program(require('../package.json')).parse();
