@@ -19,7 +19,7 @@ When invoked without no arguments the program will print some lorem ipsum paragr
 * `-c, --collapse`: Collapse whitespace between sections
 * `-v, --vanilla`: Disable parameter replacement
 * `-e, --exit`: Include exit section from error definitions
-* `-s, --sort [value]`: Alters the help option sort order. Set to null to use natural order which is likely the order that options were declared in however this is not guaranteed. Use false for the default sorting logic which favours options with more names, use true to sort lexicographically (Array.prototype.sort). Use 1 to sort by option string length (determined by the length of the help option string), reverse the order with -1.
+* `-s, --sort [value]`: Alters the help option sort order. Set to null to use natural order which is likely the order that options were declared in however this is not guaranteed. Use false for the default sorting logic which favours options with more names, use true to sort lexicographically using *Array.prototype.sort*. Use 1 to sort by option string length (determined by the length of the help option string), reverse the order with -1.
 * `-f, --format [value]`: Set the help output format
 * `-a, --align [value]`: Alignment style (column|line|flex|wrap)
 * `-m, --maximum [value]`: Maximum column width
