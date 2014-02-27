@@ -5,11 +5,6 @@ Table of Contents
   * [Install](#install)
   * [Usage](#usage)
   * [Definition](#definition)
-* [<div class="highlight highlight-markdown">lipsum](#div-classhighlight highlight-markdownlipsum)
-  * [Commands](#commands)
-  * [Options](#options)
-  * [Examples](#examples)
-  * [Copyright](#copyright)
   * [License](#license)
 
 lipsum(1)
@@ -124,8 +119,9 @@ Report bugs to muji <noop@xpm.io>.
 
 This program was configured using the following markdown configuration, see [lipsum.md](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md):
 
-<div class="highlight highlight-markdown">lipsum
-================================================
+```markdown
+lipsum
+======
 
 Lipsum is a program used to generate lorem ipsum text and to test help output for the command module.
 
@@ -135,8 +131,8 @@ When invoked without no arguments the program will print some lorem ipsum paragr
 
 ## Commands
 
-* `print`: Print some messages using the log middleware.
-* `ex, exception, e`: Throw an exception.
+* `print`: Print some messages using the log middleware
+* `ex, exception, e`: Throw an exception
 
 ## Options
 
@@ -153,123 +149,143 @@ When invoked without no arguments the program will print some lorem ipsum paragr
 ## Examples
 
 Print help using the command module defaults:
-
 ```
-lipsum --help
+
+Lipsum --help.
+
 ```
 
 Print help and include mock latin options and commands:
-
 ```
-lipsum -lh
+
+Lipsum -lh.
+
 ```
 
 Print help as JSON:
-
 ```
-lipsum -jh
+
+Lipsum -jh.
+
 ```
 
 Include exit codes in the help output:
-
 ```
-lipsum -eh
+
+Lipsum -eh.
+
 ```
 
 Print help as markdown:
-
 ```
-lipsum --format markdown --help
+
+Lipsum --format markdown --help.
+
 ```
 
 Switch to flex alignment:
-
 ```
-lipsum -h --align flex
+
+Lipsum -h --align flex.
+
 ```
 
 Increase maximum column width:
-
 ```
-lipsum -lh --maximum 100
+
+Lipsum -lh --maximum 100.
+
 ```
 
 Disable help option sort (natural order):
-
 ```
-lipsum -lh --sort null
+
+Lipsum -lh --sort null.
+
 ```
 
 Use default sort order:
-
 ```
-lipsum -lh --sort false
+
+Lipsum -lh --sort false.
+
 ```
 
 Use lexicographic sort order:
-
 ```
-lipsum -lh --sort true
+
+Lipsum -lh --sort true.
+
 ```
 
 Sort by length of option (longest first):
-
 ```
-lipsum -lh --sort 1
+
+Lipsum -lh --sort 1.
+
 ```
 
 Sort by length of option (shortest first):
-
 ```
-lipsum -lh --sort -1
+
+Lipsum -lh --sort -1.
+
 ```
 
 Disable terminal colors:
-
 ```
-lipsum --help --no-color
+
+Lipsum --help --no-color.
+
 ```
 
 Verify ANSI escape sequences are not written to files:
-
 ```
-lipsum --help > help.txt && cat help.txt
+
+Lipsum --help > help.txt && cat help.txt.
+
 ```
 
 Print some messages, illustrates the log middleware:
-
 ```
-lipsum print
+
+Lipsum print.
+
 ```
 
 Set log level to warn and print some messages:
-
 ```
-lipsum print --log-level=warn --no-color
+
+Lipsum print --log-level=warn --no-color.
+
 ```
 
 Print an error, will be treated as an uncaught exception:
-
 ```
-lipsum ex
+
+Lipsum ex.
+
 ```
 
 Include stack trace in exception and set log level to trace:
-
 ```
-lipsum ex --debug
+
+Lipsum ex --debug.
+
 ```
 
 Verify exit code for uncaught exception, compare to `lipsum -eh`:
-
 ```
-lipsum ex; echo $?;
+
+Lipsum ex; echo $?;
+
 ```
 
 ## Copyright
 
 Copyright (C) 2014 Freeform Systems, Ltd.
-This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</div>
+This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
 
 ## License
 
