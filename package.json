@@ -69,14 +69,22 @@
       },
       {
         "title": "Usage",
+        "text": "This is the help output which is the result of combining the markdown [definition](#definition) with the [source code](#source).",
         "bin": "lipsum --help",
         "type": "code"
       },
       {
         "title": "Definition",
-        "text": "This program was configured using the following markdown configuration, see [lipsum.md](/lib/lipsum.md):",
+        "text": "This program was configured using the following markdown definition file, see [lipsum.md](/lib/lipsum.md):",
         "inc": "../../lib/lipsum.md",
         "format": "<pre><code>%s</code></pre>"
+      },
+      {
+        "title": "Source",
+        "text": "Code from [lipsum.js](/lib/lipsum.js):",
+        "inc": "../../lib/lipsum.js",
+        "type": "code",
+        "language": "javascript"
       },
       {
         "inc": [
