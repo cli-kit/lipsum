@@ -7,6 +7,11 @@ If the -l | --latin option is specified and it looks like latin then it does not
 
 When invoked without no arguments the program will print some lorem ipsum paragraphs.
 
+## Commands
+
+* `print`: Print some messages using the log middleware
+* `ex, exception, e`: Throw an exception
+
 ## Options
 
 ## Examples
