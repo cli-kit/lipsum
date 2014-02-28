@@ -25,11 +25,11 @@
     "command"
   ],
   "dependencies": {
-    "cli-command": "~0.8.40",
+    "cli-command": "~0.8.44",
     "cli-logger": "~0.5.10",
     "cli-interface": "~1.0.8",
     "cli-native": "~1.0.0",
-    "ttycolor": "~0.8.8"
+    "ttycolor": "~0.8.9"
   },
   "devDependencies": {
     "mdp": "0.1.12",
