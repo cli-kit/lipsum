@@ -2,5 +2,7 @@ coverage
 example
 /doc/readme
 /test
+/doc/bin
+/doc/img
 img
 *.tgz
