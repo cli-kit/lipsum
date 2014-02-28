@@ -19,3 +19,4 @@ height="${screen_height:-1050}";
 screen_tmux="${screen_tmux:-$(pwd)/}"
 osascript "${bin}/launch.scpt" "${screenshot}" "${output}" "${SCREEN_CMD}" \
   "${name}" "${width}" "${height}";
+sleep 5;
