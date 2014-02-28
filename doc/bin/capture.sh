@@ -8,5 +8,5 @@ screencapture -w ${output} &
 sleep 1;
 cliclick c:100,100
 sleep 1;
-#tmux kill-session -t lipsum-help
+tmux kill-session -t screenshot
 tmux set status on

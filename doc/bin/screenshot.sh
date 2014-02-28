@@ -8,24 +8,24 @@ tmuxwin(){
   local output="$1";
   local cmd="${@:2}";
  
-  tmux has-session -t lipsum-help 2>/dev/null
+  tmux has-session -t screenshot 2>/dev/null
   if [ "$?" -eq 1 ]; then
-    tmux new-session -d -s lipsum-help -n screencapture
-    tmux new-window -k -t lipsum-help:1 -n screencapture-win
+    tmux new-session -d -s screenshot -n screencapture
+    tmux new-window -k -t screenshot:1 -n screencapture-win
   fi
 
   tmux set status off
 
-  tmux clearhist -t lipsum:help
-  tmux send-keys -t lipsum-help:1 "clear" C-m
+  tmux clearhist -t screenshot:1
+  #tmux send-keys -t screenshot:1 C-l
 
   # execute the command whose output we want
-  tmux send-keys -t lipsum-help:1 "$cmd" C-m
+  tmux send-keys -t screenshot:1 "$cmd" C-m
 
   ${dir}/capture.sh ${output} &
 
-  tmux select-window -t lipsum-help:1
-  tmux attach-session -t lipsum-help
+  tmux select-window -t screenshot:1
+  tmux attach-session -t screenshot
 }
 
 sleep 1;

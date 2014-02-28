@@ -7,6 +7,7 @@ Table of Contents
   * [Source](#source)
   * [Usage](#usage)
   * [Version](#version)
+  * [Screenshot](#screenshot)
   * [License](#license)
 
 lipsum(1)
@@ -279,6 +280,12 @@ Copyright (C) 2014 Freeform Systems, Ltd.
 This is free software; see the source for copying conditions. There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
+
+## Screenshot
+
+<p align="center">
+  <img src="https://raw.github.com/freeformsystems/lipsum/master/doc/img/help.png" />
+</p>
 
 ## License
 

@@ -90,6 +90,7 @@
       },
       {
         "inc": [
+          "screenshot.md",
           "license.md",
           "footer.md"
         ]
