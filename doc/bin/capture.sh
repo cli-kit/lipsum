@@ -4,7 +4,7 @@
 
 output="$1";
 sleep 1;
-screencapture -w ${output} &
+screencapture -o -P -w ${output} &
 sleep 1;
 cliclick c:100,100
 sleep 1;
