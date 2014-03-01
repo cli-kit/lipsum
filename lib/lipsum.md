@@ -1,9 +1,9 @@
-lipsum
-======
+$0
+==
 
 Lipsum is a program used to generate lorem ipsum text and to test help output for the command module.
 
-If the `-l | --latin` option is specified and it looks like latin then it does nothing, other more meaningful options that have an affect are interspersed, try `--align` and `--format` in particular. The examples are valid, they illustrate some of the functionality of the command module.
+If the `${opt_latin_pipe}` option is specified and it looks like latin then it does nothing, other more meaningful options that have an affect are interspersed, try `${opt_align_long}` and `${opt_format_long}` in particular. The examples are valid, they illustrate some of the functionality of the command module.
 
 When invoked without arguments the program will print some lorem ipsum paragraphs.
 
@@ -29,115 +29,115 @@ When invoked without arguments the program will print some lorem ipsum paragraph
 Print help using the command module defaults:
 
 ```
-lipsum --help
+$0 ${opt_help_long}
 ```
 
 Print help and include mock latin options and commands:
 
 ```
-lipsum -lh
+$0 -lh
 ```
 
 Print help as JSON:
 
 ```
-lipsum -jh
+$0 -jh
 ```
 
 Include exit codes in the help output:
 
 ```
-lipsum -eh
+$0 -eh
 ```
 
 Print help as markdown:
 
 ```
-lipsum --format markdown --help
+$0 ${opt_format_long} markdown ${opt_help_long}
 ```
 
 Switch to flex alignment:
 
 ```
-lipsum -h --align flex
+$0 -h ${opt_align_long} flex
 ```
 
 Increase maximum column width:
 
 ```
-lipsum -lh --maximum 100
+$0 -lh ${opt_maximum_long} 100
 ```
 
 Disable help option sort (natural order):
 
 ```
-lipsum -lh --sort null
+$0 -lh ${opt_sort_long} null
 ```
 
 Use default sort order:
 
 ```
-lipsum -lh --sort false
+$0 -lh ${opt_sort_long} false
 ```
 
 Use lexicographic sort order:
 
 ```
-lipsum -lh --sort true
+$0 -lh ${opt_sort_long} true
 ```
 
 Sort by length of option (longest first):
 
 ```
-lipsum -lh --sort 1
+$0 -lh ${opt_sort_long} 1
 ```
 
 Sort by length of option (shortest first):
 
 ```
-lipsum -lh --sort -1
+$0 -lh ${opt_sort_long} -1
 ```
 
 Disable terminal colors:
 
 ```
-lipsum --help --no-color
+$0 ${opt_help_long} ${opt_color_no}
 ```
 
 Verify ANSI escape sequences are not written to files:
 
 ```
-lipsum --help > help.txt && cat help.txt
+$0 ${opt_help_long} > help.txt && cat help.txt
 ```
 
 Print some messages, illustrates the log middleware:
 
 ```
-lipsum print
+$0 ${cmd_print_long}
 ```
 
 Set log level to warn and print some messages:
 
 ```
-lipsum print --log-level=warn --no-color
+$0 ${cmd_print_long} --log-level=warn ${opt_color_no}
 ```
 
 Print an error, will be treated as an uncaught exception:
 
 ```
-lipsum ex
+$0 ex
 ```
 
 Include stack trace in exception and set log level to trace:
 
 ```
-lipsum ex --debug
+$0 ex --debug
 ```
 
-Verify exit code for uncaught exception, compare to `lipsum -eh`:
+Verify exit code for uncaught exception, compare to `$0 -eh`:
 
 ```
-lipsum ex; echo $?;
+$0 ex; echo $?;
 ```
 
 ## Copyright
