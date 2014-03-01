@@ -38,8 +38,7 @@ var fs = require('fs');
 var path = require('path');
 var convert = require('cli-native');
 var formats = cli.doc.fmt.formats;
-var lipsum = ''
-  + fs.readFileSync(path.join(__dirname, 'lipsum.txt'));
+var lipsum = '' + fs.readFileSync(path.join(__dirname, 'lipsum.txt'));
 var paragraphs = lipsum.split('\n\n');
 
 var list = [null, true, false, 1, -1];
@@ -76,7 +75,7 @@ function mock() {
 
 // properties to associate with the commands
 // and options loaded from lipsum.md
-var def = {
+var options = {
   commands: {
     print: print,
     exception: exception
@@ -97,7 +96,8 @@ var LoremIpsum = function() {
 util.inherits(LoremIpsum, CommandInterface);
 
 LoremIpsum.prototype.configure = function() {
-  var conf = {};
+  var file = path.join(__dirname, 'lipsum.md');
+  var conf = {load: {file: file, options: options}};
   var hints = {
     values: {
       format: formats,
@@ -123,6 +123,10 @@ LoremIpsum.prototype.use = function() {
 
 LoremIpsum.prototype.on = function() {
   this
+    .once('load', function(req) {
+      this.help('-h, --help')
+        .version();
+    })
     .once('latin', function(req, arg, value) {
       mock.call(this);
     })
@@ -159,13 +163,7 @@ LoremIpsum.prototype.on = function() {
 }
 
 module.exports = function(pkg) {
-  var file = path.join(__dirname, 'lipsum.md');
-  var lipsum = new LoremIpsum(pkg);
-  lipsum.load(file, def, function() {
-    this.help('-h, --help')
-      .version()
-      .parse();
-  });
+  return new LoremIpsum(pkg);
 }
 ```
 
@@ -190,7 +188,7 @@ Usage: lipsum <command> [-ljcveh] [--color|--no-color]
               [-v|--vanilla] [-e|--exit] [-h|--help] [--version]
               [--log-level=<level>] [--log-file=<file>]
               [-s|--sort=(null|true|false|1|-1)]
-              [-f|--format=(text|json|markdown)]
+              [-f|--format=(text|json|markdown|man)]
               [-a|--align=(column|line|flex|wrap)]
               [-m|--maximum=<60-240>] <args>
 
@@ -262,8 +260,8 @@ Examples:
  lipsum ex          Print an error, will be treated as an uncaught exception.
  lipsum ex --debug  Include stack trace in exception and set log level to trace.
  lipsum ex; echo $?;
-                    Verify exit code for uncaught exception, compare to `lipsum
-                    -eh`.
+                    Verify exit code for uncaught exception, compare to lipsum
+                    -eh.
 
 Report bugs to muji <noop@xpm.io>.
 ```

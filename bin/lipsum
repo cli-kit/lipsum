@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 var program = require('../lib/lipsum');
-program(require('../package.json'));
+program(require('../package.json')).parse();
