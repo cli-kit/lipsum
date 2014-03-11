@@ -1,0 +1,108 @@
+.TH "LIPSUM" "1" "2014-03-11T03:28:43.172Z" "lipsum 1.0" "User Commands"
+.SH "NAME"
+lipsum
+.SH "DESCRIPTION"
+.PP
+Lipsum is a program used to generate lorem ipsum text and to test help output for the command module.
+.PP
+If the \-l | \-\-latin option is specified and it looks like latin then it does nothing, other more meaningful options that have an affect are interspersed, try \-\-align and \-\-format in particular. The examples are valid, they illustrate some of the functionality of the command module.
+.PP
+When invoked without arguments the program will print some lorem ipsum paragraphs.
+.SH "USAGE"
+
+.LT
+lipsum <command> [\-ljcveh] [\-\-color|\-\-no\-color] [\-\-debug] [\-l|\-\-latin]
+       [\-j|\-\-json] [\-c|\-\-collapse] [\-v|\-\-vanilla] [\-e|\-\-exit] [\-h|\-\-help]
+       [\-\-version] [\-\-log\-level=<level>] [\-\-log\-file=<file>]
+       [\-s|\-\-sort=(null|true|false|1|\-1)]
+       [\-f|\-\-format=(text|json|markdown|man)]
+       [\-a|\-\-align=(column|line|flex|wrap)] [\-m|\-\-maximum=<60\-240>]
+       <args>
+.SH "COMMANDS"
+.BL
+.IP "\[ci]" 4
+\fBprint\fR: Print some messages using the log middleware.
+.IP "\[ci]" 4
+\fBex, exception, e\fR: Throw an exception.
+.EL
+.SH "OPTIONS"
+.BL
+.IP "\[ci]" 4
+\fB\-v, \-\-vanilla\fR: Disable parameter replacement.
+.IP "\[ci]" 4
+\fB\-\-[no]\-color\fR: Enable or disable terminal colors.
+.IP "\[ci]" 4
+\fB\-\-log\-file=[file]\fR: Redirect to log file.
+.IP "\[ci]" 4
+\fB\-\-debug\fR: Enable debugging.
+.IP "\[ci]" 4
+\fB\-l, \-\-latin\fR: Include mock lipsum options and commands.
+.IP "\[ci]" 4
+\fB\-j, \-\-json\fR: Print help as json.
+.IP "\[ci]" 4
+\fB\-c, \-\-collapse\fR: Collapse whitespace between sections.
+.IP "\[ci]" 4
+\fB\-\-log\-level=[level]\fR: Set the log level.
+.IP "\[ci]" 4
+\fB\-e, \-\-exit\fR: Include exit section from error definitions.
+.IP "\[ci]" 4
+\fB\-s, \-\-sort=[value]\fR: Alters the help option sort order. Set to null to use natural order which is likely the order that options were declared in however this is not guaranteed. Use false for the default sorting logic which favours options with more names, use true to sort lexicographically using Array.prototype.sort. Use 1 to sort by option string length (determined by the length of the help option string), reverse the order with \-1.
+.IP "\[ci]" 4
+\fB\-f, \-\-format=[value]\fR: Set the help output format.
+.IP "\[ci]" 4
+\fB\-a, \-\-align=[value]\fR: Alignment style.
+.IP "\[ci]" 4
+\fB\-m, \-\-maximum=[value]\fR: Maximum column width.
+.IP "\[ci]" 4
+\fB\-h, \-\-help\fR: Display this help and exit.
+.IP "\[ci]" 4
+\fB\-\-version\fR: Output version information and exit.
+.EL
+.SH "EXAMPLES"
+.BL
+.IP "\[ci]" 4
+\fBlipsum \-\-help\fR: Print help using the command module defaults.
+.IP "\[ci]" 4
+\fBlipsum \-lh\fR: Print help and include mock latin options and commands.
+.IP "\[ci]" 4
+\fBlipsum \-jh\fR: Print help as JSON.
+.IP "\[ci]" 4
+\fBlipsum \-eh\fR: Include exit codes in the help output.
+.IP "\[ci]" 4
+\fBlipsum \-\-format markdown \-\-help\fR: Print help as markdown.
+.IP "\[ci]" 4
+\fBlipsum \-h \-\-align flex\fR: Switch to flex alignment.
+.IP "\[ci]" 4
+\fBlipsum \-lh \-\-maximum 100\fR: Increase maximum column width.
+.IP "\[ci]" 4
+\fBlipsum \-lh \-\-sort null\fR: Disable help option sort (natural order).
+.IP "\[ci]" 4
+\fBlipsum \-lh \-\-sort false\fR: Use default sort order.
+.IP "\[ci]" 4
+\fBlipsum \-lh \-\-sort true\fR: Use lexicographic sort order.
+.IP "\[ci]" 4
+\fBlipsum \-lh \-\-sort 1\fR: Sort by length of option (longest first).
+.IP "\[ci]" 4
+\fBlipsum \-lh \-\-sort \-1\fR: Sort by length of option (shortest first).
+.IP "\[ci]" 4
+\fBlipsum \-\-help \-\-no\-color\fR: Disable terminal colors.
+.IP "\[ci]" 4
+\fBlipsum \-\-help > help.txt && cat help.txt\fR: Verify ANSI escape sequences are not written to files.
+.IP "\[ci]" 4
+\fBlipsum print\fR: Print some messages, illustrates the log middleware.
+.IP "\[ci]" 4
+\fBlipsum print \-\-log\-level=warn \-\-no\-color\fR: Set log level to warn and print some messages.
+.IP "\[ci]" 4
+\fBlipsum ex\fR: Print an error, will be treated as an uncaught exception.
+.IP "\[ci]" 4
+\fBlipsum ex \-\-debug\fR: Include stack trace in exception and set log level to trace.
+.IP "\[ci]" 4
+\fBlipsum ex; echo $?;\fR: Verify exit code for uncaught exception, compare to lipsum \-eh.
+.EL
+.SH "BUGS"
+.PP
+Report bugs to muji noop@xpm.io.
+.SH "COPYRIGHT"
+.PP
+Copyright (C) 2014 Freeform Systems, Ltd.
+This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
