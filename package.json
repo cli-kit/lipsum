@@ -32,9 +32,10 @@
     "ttycolor": "~0.8.9"
   },
   "devDependencies": {
+    "cli-manpage": "~0.0.4",
     "mocha": "~1.17.0",
     "chai": "~1.9.0",
-    "istanbul": "~0.2.4"
+    "istanbul": "~0.2.6"
   },
   "directories": {
     "bin": "./bin",
