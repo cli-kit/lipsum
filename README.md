@@ -98,7 +98,12 @@ util.inherits(LoremIpsum, CommandInterface);
 LoremIpsum.prototype.configure = function() {
   var file = path.join(__dirname, 'lipsum.md');
   var conf = {
-    load: {file: file, options: options}, substitute: {enabled: true}};
+    load: {
+      file: file, options: options
+    },
+    substitute: {enabled: true},
+    manual: {}
+  };
   var hints = {
     values: {
       format: formats,
@@ -119,7 +124,8 @@ LoremIpsum.prototype.use = function() {
   this
     .use(cli.middleware.color)
     .use(cli.middleware.logger, null, {level: {}, file: {}})
-    .use(cli.middleware.debug);
+    .use(cli.middleware.debug)
+    .use(cli.middleware.manual);
 }
 
 LoremIpsum.prototype.on = function() {
@@ -195,11 +201,12 @@ Usage: lipsum <command> [-ljcveh] [--color|--no-color]
 
 Options:
 
-Command should be one of: print, ex.
+Command should be one of: help, print, exception.
 
 Commands:
+ help               Show help for commands.
  print              Print some messages using the log middleware.
- ex, exception, e   Throw an exception.
+ exception, ex, e   Throw an exception.
 
 Arguments:
  -v, --vanilla      Disable parameter replacement.
