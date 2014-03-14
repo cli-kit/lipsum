@@ -25,14 +25,14 @@
     "command"
   ],
   "dependencies": {
-    "cli-command": "~0.8.51",
+    "cli-command": "~0.8.77",
     "cli-logger": "~0.5.10",
     "cli-interface": "~1.0.8",
     "cli-native": "~1.0.0",
     "ttycolor": "~0.8.9"
   },
   "devDependencies": {
-    "cli-manpage": "~0.0.4",
+    "cli-manpage": "~0.0.8",
     "mocha": "~1.17.0",
     "chai": "~1.9.0",
     "istanbul": "~0.2.6"

@@ -1,7 +1,9 @@
 $0
 ==
 
-Lipsum is a program used to generate lorem ipsum text and to test help output for the command module.
+Canonical example for the command module.
+
+Generates lorem ipsum text and is used to test help output for the command module.
 
 If the `${opt_latin_pipe}` option is specified and it looks like latin then it does nothing, other more meaningful options that have an affect are interspersed, try `${opt_align_long}` and `${opt_format_long}` in particular. The examples are valid, they illustrate some of the functionality of the command module.
 

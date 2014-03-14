@@ -103,7 +103,8 @@ LoremIpsum.prototype.configure = function() {
     },
     substitute: {enabled: true},
     manual: {
-      dir: path.normalize(path.join(__dirname, '..', 'doc', 'man'))
+      dir: path.normalize(path.join(__dirname, '..', 'doc', 'man')),
+      dynamic: true
     }
   };
   var hints = {
@@ -181,16 +182,7 @@ module.exports = function(pkg) {
 This is the help output which is the result of combining the markdown [definition](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md) with the [source code](#source).
 
 ```
-Lipsum is a program used to generate lorem ipsum text and to test help output
-for the command module.
-
-If the -l | --latin option is specified and it looks like latin then it does
-nothing, other more meaningful options that have an affect are interspersed, try
---align and --format in particular. The examples are valid, they illustrate some
-of the functionality of the command module.
-
-When invoked without arguments the program will print some lorem ipsum
-paragraphs.
+Canonical example for the command module.
 
 Usage: lipsum <command> [-ljcveh] [--color|--no-color]
               [--debug] [-l|--latin] [-j|--json] [-c|--collapse]
