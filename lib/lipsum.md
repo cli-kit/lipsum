@@ -11,7 +11,7 @@ When invoked without arguments the program will print some lorem ipsum paragraph
 
 ## Commands
 
-* `print`: Print some messages using the log middleware
+* `print, p`: Print some messages using the log middleware
 * `ex, exception, e`: Throw an exception
 
 ## Options

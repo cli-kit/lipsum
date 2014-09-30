@@ -37,7 +37,7 @@ var cli = glue.cli, help = cli.help;
 var fs = require('fs');
 var path = require('path');
 var convert = require('cli-native');
-var formats = cli.doc.fmt.formats;
+var formats = require('cli-help').fmt.formats;
 var lipsum = '' + fs.readFileSync(path.join(__dirname, 'lipsum.txt'));
 var paragraphs = lipsum.split('\n\n');
 
@@ -54,8 +54,8 @@ function print() {
   })
 }
 
-function exception(cmd) {
-  this.raise('%s command invoked', [cmd.getOptionString(' | ')]);
+function exception(info, req, next) {
+  this.raise('%s command invoked', [info.cmd.getOptionString(' | ')]);
 }
 
 // add mock options and commands
@@ -98,6 +98,7 @@ util.inherits(LoremIpsum, CommandInterface);
 LoremIpsum.prototype.configure = function() {
   var file = path.join(__dirname, 'lipsum.md');
   var conf = {
+    trace: process.env.NODE_ENV === 'devel',
     load: {
       file: file, options: options
     },
@@ -123,12 +124,17 @@ LoremIpsum.prototype.configure = function() {
     .usage(hints);
 }
 
+var midcolor = require('cli-mid-color')
+  , midlogger = require('cli-mid-logger')
+  , middebug = require('cli-mid-debug')
+  , midmanual = require('cli-mid-manual')
+
 LoremIpsum.prototype.use = function() {
   this
-    .use(cli.middleware.color)
-    .use(cli.middleware.logger, null, {level: {}, file: {}})
-    .use(cli.middleware.debug)
-    .use(cli.middleware.manual);
+    .use(midcolor)
+    .use(midlogger, null, {level: {}, file: {}})
+    .use(middebug)
+    .use(midmanual);
 }
 
 LoremIpsum.prototype.on = function() {
@@ -182,8 +188,6 @@ module.exports = function(pkg) {
 This is the help output which is the result of combining the markdown [definition](https://github.com/freeformsystems/cli-lipsum/blob/master/lib/lipsum.md) with the [source code](#source).
 
 ```
-Canonical example for the command module.
-
 Usage: lipsum <command> [-ljcveh] [--color|--no-color]
               [--debug] [-l|--latin] [-j|--json] [-c|--collapse]
               [-v|--vanilla] [-e|--exit] [-h|--help] [--version]
@@ -193,21 +197,19 @@ Usage: lipsum <command> [-ljcveh] [--color|--no-color]
               [-a|--align=(column|line|flex|wrap)]
               [-m|--maximum=<60-240>] <args>
 
-Options:
-
-Command should be one of: help, print, exception.
+Canonical example for the command module.
 
 Commands:
  help               Show help for commands.
- print              Print some messages using the log middleware.
+ print, p           Print some messages using the log middleware.
  exception, ex, e   Throw an exception.
 
-Arguments:
+Options:
  -v, --vanilla      Disable parameter replacement.
      --[no]-color   Enable or disable terminal colors.
      --log-file=[file]
                     Redirect to log file.
-     --debug        Enable debugging.
+     --debug        Enable stack traces.
  -l, --latin        Include mock lipsum options and commands.
  -j, --json         Print help as json.
  -c, --collapse     Collapse whitespace between sections.
@@ -230,40 +232,6 @@ Arguments:
                     Maximum column width.
  -h, --help         Display this help and exit.
      --version      Output version information and exit.
-
-Examples:
- lipsum --help      Print help using the command module defaults.
- lipsum -lh         Print help and include mock latin options and commands.
- lipsum -jh         Print help as JSON.
- lipsum -eh         Include exit codes in the help output.
- lipsum --format markdown --help
-                    Print help as markdown.
- lipsum -h --align flex
-                    Switch to flex alignment.
- lipsum -lh --maximum 100
-                    Increase maximum column width.
- lipsum -lh --sort null
-                    Disable help option sort (natural order).
- lipsum -lh --sort false
-                    Use default sort order.
- lipsum -lh --sort true
-                    Use lexicographic sort order.
- lipsum -lh --sort 1
-                    Sort by length of option (longest first).
- lipsum -lh --sort -1
-                    Sort by length of option (shortest first).
- lipsum --help --no-color
-                    Disable terminal colors.
- lipsum --help > help.txt && cat help.txt
-                    Verify ANSI escape sequences are not written to files.
- lipsum print       Print some messages, illustrates the log middleware.
- lipsum print --log-level=warn --no-color
-                    Set log level to warn and print some messages.
- lipsum ex          Print an error, will be treated as an uncaught exception.
- lipsum ex --debug  Include stack trace in exception and set log level to trace.
- lipsum ex; echo $?;
-                    Verify exit code for uncaught exception, compare to lipsum
-                    -eh.
 
 Report bugs to muji <noop@xpm.io>.
 ```

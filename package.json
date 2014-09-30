@@ -25,17 +25,21 @@
     "command"
   ],
   "dependencies": {
-    "cli-command": "~0.8.77",
-    "cli-logger": "~0.5.10",
-    "cli-interface": "~1.0.8",
-    "cli-native": "~1.0.0",
-    "ttycolor": "~0.8.9"
+    "cli-command": "^0.8.279",
+    "cli-help": "0.0.11",
+    "cli-interface": "^1.0.16",
+    "cli-logger": "^0.5.31",
+    "cli-mid-color": "^1.0.7",
+    "cli-mid-debug": "^1.0.3",
+    "cli-mid-logger": "^1.0.3",
+    "cli-mid-manual": "^1.0.5",
+    "cli-native": "^1.0.0",
+    "ttycolor": "^0.8.13"
   },
   "devDependencies": {
-    "cli-manpage": "~0.0.8",
-    "mocha": "~1.17.0",
-    "chai": "~1.9.0",
-    "istanbul": "~0.2.6"
+    "chai": "^1.9.2",
+    "istanbul": "^0.3.2",
+    "mocha": "^1.21.4"
   },
   "directories": {
     "bin": "./bin",
@@ -47,7 +51,7 @@
   "scripts": {
     "manual": "manpage --output ./doc/man ./bin/lipsum",
     "help-screen": "export OUTPUT=help.png;export SCREEN_CMD=\"$(pwd)/${npm_package_bin_lipsum} --help\"; ./doc/bin/run.sh",
-    "build": "mdp --force -v",
+    "readme": "mdp --force -v",
     "help2man": "help2man=true help2man --no-info --output=./doc/lipsum-help2man.1 ./bin/lipsum && man ./doc/lipsum-help2man.1",
     "help2json": "./bin/lipsum -j > ./doc/lipsum.json && cat ./doc/lipsum.json",
     "test": "istanbul cover _mocha -- -u bdd --recursive --bail --reporter list -A test/unit/"
