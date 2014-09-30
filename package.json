@@ -26,13 +26,13 @@
   ],
   "dependencies": {
     "cli-command": "^0.8.279",
-    "cli-help": "0.0.11",
+    "cli-help": "0.0.12",
     "cli-interface": "^1.0.16",
     "cli-logger": "^0.5.31",
     "cli-mid-color": "^1.0.7",
     "cli-mid-debug": "^1.0.3",
     "cli-mid-logger": "^1.0.3",
-    "cli-mid-manual": "^1.0.5",
+    "cli-mid-manual": "^1.0.6",
     "cli-native": "^1.0.0",
     "ttycolor": "^0.8.13"
   },
