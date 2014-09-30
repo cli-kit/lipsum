@@ -140,6 +140,7 @@ LoremIpsum.prototype.use = function() {
 LoremIpsum.prototype.on = function() {
   this
     .once('load', function(req) {
+      //console.log(this.name());
       this.help('-h, --help')
         .version();
     })
